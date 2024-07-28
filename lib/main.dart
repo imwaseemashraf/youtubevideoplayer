@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -23,17 +24,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late YoutubePlayerController _controller;
-  final youtubeUrl = "https://youtu.be/0sacQ4oo-P0";
+  final youtubeUrl = "https://youtu.be/CcxH6RqGtaA";
   @override
   void initState() {
     super.initState();
     String? videoId = YoutubePlayer.convertUrlToId(youtubeUrl);
 
     _controller = YoutubePlayerController(
-      initialVideoId: "0sacQ4oo-P0",
+      initialVideoId: "CcxH6RqGtaA",
       flags: const YoutubePlayerFlags(
         autoPlay: true,
-        mute: true,
+        mute: false,
         startAt: 00,
         showLiveFullscreenButton: true,
         controlsVisibleAtStart: true,
